@@ -5,6 +5,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import inject from '@rollup/plugin-inject';
+import screeps from 'rollup-plugin-screeps';
 import path from 'path';
 
 let cfg;
@@ -28,7 +29,8 @@ export default {
     clear({ targets: ["dist"] }),
     resolve({ browser: true, preferBuiltins: false }),
     commonjs(),
-    typescript({tsconfig: "./tsconfig.json", clean: true}),
+    typescript({ tsconfig: "./tsconfig.json", clean: true }),
+    screeps({ config: cfg, dryRun: cfg == null }),
     inject({
       Promise: path.resolve('src/polyfills/promisepolyfill/index.js'),
       setInterval: path.resolve('src/polyfills/setintervalpolyfill/index.js'),
