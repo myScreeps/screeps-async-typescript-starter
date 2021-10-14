@@ -1,7 +1,6 @@
 import PromisePoly from "./polyfills/promisepolyfill";
 import { ErrorMapper } from "utils/ErrorMapper";
 import { AsyncLoop } from "utils/AsyncLoop";
-// test
 let bool = false;
 
 // promise resolves in three ticks
