@@ -1,7 +1,7 @@
 import PromisePoly from "./polyfills/promisepolyfill";
 import { ErrorMapper } from "utils/ErrorMapper";
 import { AsyncLoop } from "utils/AsyncLoop";
-
+// test
 let bool = false;
 
 // promise resolves in three ticks
@@ -14,7 +14,7 @@ async function delayFn() {
   return "Resolved promise";
 }
 
-let p:any = null;
+let p: any = null;
 
 const asl = new AsyncLoop();
 
